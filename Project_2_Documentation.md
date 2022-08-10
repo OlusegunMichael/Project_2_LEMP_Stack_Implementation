@@ -41,3 +41,14 @@ ___
 * *`php-mysql`*- PHP module that allows PHP to communicate with MySQL-based databases as well. 
 #####  To install all this 2 packages and other core php packages *`sudo apt install php-fpm php-mysql`* command is used and below images shows the status of the running update.
 ![sudo apt install php-fpm php-mysql](./Project_2_Images/sudo_apt_install_php-fpm_php-mysql.PNG)
+
+### **Step 4 CONFIGURING NGINX TO USE PHP PROCESSOR**
+>#### Setting up the NGINX to Create Server Blocks
+#####  The following command were used to set up the server blocks to encapsulate configuration details and host more than one domain on a single server with projectLEMP as an example domain name.
+* *`sudo mkdir /var/www/projectLEMP`* - (Creates a directory for Domain name  projectLEMP)
+* *`sudo chown -R $USER:$USER /var/www/projectLEMP`* - (To assign ownerships of directory tp projectLEMP with ther USER envronlemt varable.)
+* *`sudo nano /etc/nginx/sites-available/projectLEMP`* - (Creates a configuraton file in Nginx directory using nano line editor)
+* *`sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`* - (Activated configuration linked to the config file)
+* *`sudo nginx -t`* - (Tests all configurations to ensure proper syntax)
+* *`sudo unlink /etc/nginx/sites-enabled/default`* - (Disables default Nginx host that is currently configured)
+* *`sudo systemctl reload nginx`* (Reloads Nginx to apply changes)
