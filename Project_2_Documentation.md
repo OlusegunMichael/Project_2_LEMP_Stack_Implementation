@@ -41,4 +41,3 @@ ___
 * *`php-mysql`*- PHP module that allows PHP to communicate with MySQL-based databases as well. 
 #####  To install all this 2 packages and other core php packages *`sudo apt install php-fpm php-mysql`* command is used and below images shows the status of the running update.
 ![sudo apt install php-fpm php-mysql](./Project_2_Images/sudo_apt_install_php-fpm_php-mysql.PNG)
-
