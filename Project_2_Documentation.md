@@ -52,3 +52,7 @@ ___
 * *`sudo nginx -t`* - (Tests all configurations to ensure proper syntax)
 * *`sudo unlink /etc/nginx/sites-enabled/default`* - (Disables default Nginx host that is currently configured)
 * *`sudo systemctl reload nginx`* (Reloads Nginx to apply changes)
+![Nginx php serverblocks](./Project_2_Images/nginx_php_serverblocks%20command.PNG)
+#####  Opening the Website usng *`http://<Public-IP-Address>:80`* for the Public IP and *`http://<http://<Public-DNS-Name>:80`* using the Domain Name, display page is captured below.
+![PublicIP](./Project_2_Images/Public-IP-Address_LEMP.PNG)
+![Public DNS](./Project_2_Images/Public-DNS-Name_LEMP.PNG)
