@@ -52,7 +52,39 @@ ___
 * *`sudo nginx -t`* - (Tests all configurations to ensure proper syntax)
 * *`sudo unlink /etc/nginx/sites-enabled/default`* - (Disables default Nginx host that is currently configured)
 * *`sudo systemctl reload nginx`* (Reloads Nginx to apply changes)
+
+![php Test File](./Project_2_Images/nano_project_LEMP.PNG)
+
 ![Nginx php serverblocks](./Project_2_Images/nginx_php_serverblocks%20command.PNG)
 #####  Opening the Website usng *`http://<Public-IP-Address>:80`* for the Public IP and *`http://<http://<Public-DNS-Name>:80`* using the Domain Name, display page is captured below.
 ![PublicIP](./Project_2_Images/Public-IP-Address_LEMP.PNG)
 ![Public DNS](./Project_2_Images/Public-DNS-Name_LEMP.PNG)
+### **Step 5 TESTING PHP WITH NGINX**
+>### Creating a PHP Test File
+#### The following command were used to test it to validate that Nginx can correctly hand .php files off to your PHP processor.
+* *`sudo nano /var/www/projectLEMP/info.php`* -  Created a test PHP file in document root
+
+![php.info file](./Project_2_Images/nano_php_info.PNG)
+![php page](./Project_2_Images/php.PNG)
+### **Step 6 RETRIEVING DATA FROM MYSQL DATABASE WITH PHP**
+
+>### Creating a Test Database with Simple Todo List
+#### The following set command were used to create the test Database and access configured  to it, so the Nginx website would be able to query data from the DB and display it.
+* *`sudo mysql`* - (Connects to mysql)
+* *`CREATE DATABASE `example_database`;`* - (Creates a New Database)
+* *`CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';`* - ( create a new user and grants full privileges on the database)
+* *`GRANT ALL ON example_database.* TO 'example_user'@'%';`* - (Give the user permission over the specified database)
+* *`SHOW DATABASES`* - (Displays the Database Table)
+* *`CREATE TABLE example_database.todo_list (
+item_id INT AUTO_INCREMENT,
+content VARCHAR(255),
+PRIMARY KEY(item_id));`* - (Create a test table named todo_list.)
+* *`INSERT INTO example_database.todo_list (content) VALUES ("Input desired Values");`* (Inserts Rows in the Test table)
+* *`SELECT * FROM example_database.todo_list;`* (Displays the Test table)
+* *`nano /var/www/projectLEMP/todo_list.php;`* (PHP script connects to the MySQL database and queries for the content of the todo_list table)
+* *`http://<Public_domain_or_IP>/todo_list.php`* -(Shows the page to display the content of the table)
+![mysql create DB](./Project_2_Images/mysql_create_database.PNG)
+![mysql show DB](./Project_2_Images/mysql_Update_databases.PNG)
+![mysql update DB](./Project_2_Images/mysql_Update_databases.PNG)
+![phpscript connect mysql](./Project_2_Images/nano_phpscript_connect_mysql.PNG)
+![Todo List Page](./Project_2_Images/Todo%20List.PNG)
